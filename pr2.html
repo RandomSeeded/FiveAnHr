@@ -1,0 +1,23 @@
+<html>
+<body>
+<script>
+
+function combineLists(list1, list2) {
+   // easy version
+   var concatList = [];
+   do {
+      item1 = list1.shift();
+      if (item1 != undefined) concatList.push(item1);
+      item2 = list2.shift();
+      if (item2 != undefined) concatList.push(item2);
+
+   } while (item1 != undefined || item2 != undefined);
+
+   return concatList;
+}
+
+console.log(combineLists(["a","b","c"], [1,2,3]));
+
+</script>
+</body>
+</html>

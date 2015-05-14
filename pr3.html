@@ -1,0 +1,48 @@
+<html>
+<body>
+<script>
+
+function fib(target) {
+   // for sake of time were not doing this recursively yet
+   var returnList = [];
+   var small = 0;
+   var large = 1;
+   var temp = 0;
+   returnList.push(small);
+   returnList.push(large);
+   for (i = 2; i < target; i++) {
+      temp = small;
+      small = large;
+      large = large + temp;
+      returnList.push(large);
+   }
+   return returnList;
+}
+console.log(fib(10));
+
+function cleanFib(target, array, num1, num2, position) {
+   // initialization 
+   if (array == undefined) {
+      num1 = 0;
+      num2 = 1;
+      array = [num1, num2];
+      position = 2;
+   }
+   // calculate next number in the sequence
+   array[position] = num1+num2;
+
+   // final element in the sequence
+   if (position == target - 1) { return array; }
+
+   // recurse
+   else {
+      num1 = num2;
+      num2 = array[position];
+      return cleanFib(target, array, num1, num2, position+1);
+   }
+}
+console.log(cleanFib(100));
+
+</script>
+</body>
+</html>

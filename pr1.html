@@ -1,0 +1,31 @@
+<html>
+<body>
+<script>
+function sumUsingFor(array) {
+   var sum = 0;
+   for (i = 0; i < array.length; i++) {
+      sum += array[i];
+   }
+   return sum;
+}
+function sumUsingWhile(array) {
+   var sum = 0;
+   var i = 0;
+   while (i < array.length) {
+      sum += array[i];
+      i++;
+   }
+   return sum;
+}
+function sumUsingRecursion(array,position) {
+   if (position == array.length-1) return array[position];
+   else return array[position] + sumUsingRecursion(array,position+1);
+}
+
+console.log(sumUsingFor([1,2,3]));
+console.log(sumUsingWhile([1,2,3]));
+console.log(sumUsingRecursion([1,2,3],0));
+
+</script>
+</body>
+</html>

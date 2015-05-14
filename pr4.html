@@ -1,0 +1,30 @@
+<html>
+<body>
+<script>
+
+// strategy: put the largest by first digit first, then largest by second digit
+function largestNum(array) {
+   return array.sort(getFirst);
+}
+function getFirst(num1, num2) {
+
+/*   for(i = 0; i < str1.length && i < str2.length; i++) {
+      if (Number(str1.charAt(i)) > Number(str2.charAt(i))) return num1;
+      else if (Number(str1.charAt(i)) < Number(str2.charAt(i))) return num2;
+   }*/
+   // My first thought and everybody elses too. The dude who wrote the thing had a rather clever approach though: 
+   // Given that the two numbers put together will have the same length, all you need
+   // to care about is which is higher. Wham, bam, ty ma'am
+
+   if (num1 == num2) return 0;
+   var str1 = String(num1);
+   var str2 = String(num2);
+   if (Number(str1+str2) > Number(str2+ str1)) { return -1; }
+   else { return 1; }
+}
+console.log(largestNum([50,2,1,9]));
+
+
+</script>
+</body>
+</html>
