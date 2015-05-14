@@ -1,15 +1,15 @@
 <html>
 <script>
 
+// operation: stores the sequence to be performed (e.g. "1+2+3")
+// remainder: stores the nums not yet added to operation
 function pr5(operation, remainder) {
-   // debug
-/*   console.log("Operation: "+operation);
-   console.log("Remainder: "+remainder);*/
-
    // if exactly one item remaining in the queue, place it and perform operation
    if (remainder.length == 1) {
       operation += remainder[0];
       total = eval(operation);
+
+      // output if meets our target
       if (total == 100) console.log(operation + " = " + total);
    }
    else {
